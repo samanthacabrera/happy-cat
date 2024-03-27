@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import HowToUse from './components/HowToUse';
-import LoginForm from './components/LoginForm';
-import AddPetForm from './components/AddPetForm';
-import Navbar from './components/Navbar';
-import PetPage from './components/PetPage';
-import Footer from './components/Footer';
+import Navbar from './Navbar';
+import Header from './Header';
+import HowToUse from './HowToUse';
+import LoginForm from './LoginForm';
+import AddPetForm from './AddPetForm';
+import PetPage from './PetPage';
+import Footer from './Footer';
 import './App.css';
+import './tailwind.css';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     fetch('http://localhost:3001/profiles')
       .then(r => r.json())
       .then(data => {
+        // console.log(data)
         setProfiles(data);
       });
   }, []);
@@ -31,10 +33,10 @@ function App() {
   return (
     <Router> 
       <div className="app">
-        <Header />
         <Navbar loggedIn={loggedIn} toggleLogin={toggleLogin} profiles={profiles} />
+        <Header className="header"/>
         <Routes>
-          <Route path="/" element={<HowToUse />} /> 
+          <Route path="/" element={<HowToUse/>} /> 
           <Route path="/login" element={<LoginForm onLogin={toggleLogin}/>} />
           {profiles.map(profile => (
             <Route 
@@ -43,9 +45,9 @@ function App() {
               element={<PetPage profile={profile} />} 
             />
           ))}
-          <Route path="/addPet" element={<AddPetForm />} />
+          <Route path="/addPet" element={<AddPetForm profiles={profiles} />} />
         </Routes>
-        <Footer />
+        <Footer className="footer"/>
       </div>
     </Router>
   );

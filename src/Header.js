@@ -9,7 +9,7 @@ function Header() {
   }
 
   return (
-    <header className="header">
+    <header className="header pt-10">
       <h1 onClick={handleNavToHome}>Happy <span>Cat</span></h1>
     </header>
   );

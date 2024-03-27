@@ -48,7 +48,7 @@ function LoginForm({ onLogin }){
             />
           </label>
           <br />
-          <button type="submit">Login</button>
+          <button type="submit" >Login</button>
         </form>
       )}
     </div>
@@ -56,3 +56,4 @@ function LoginForm({ onLogin }){
 };
 
 export default LoginForm;
+

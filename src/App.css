@@ -1,3 +1,23 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 .app {
-  background-color: rgba(255, 182, 193, 0.405);
+  background-color: rgba(184, 227, 247, 0.405);
+  color: #333;
+}
+
+.header {
+  font-size: 4rem;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+  color: rgba(5, 16, 112, 0.406);
+}
+.header span {
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.header:hover span {
+  transform: translateY(-5px) rotate(2deg);
 }
