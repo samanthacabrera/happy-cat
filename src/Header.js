@@ -1,16 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function Header() {
 
-  const navigate = useNavigate();
-  const handleNavToHome = () => {
-    navigate('/');
-  }
+  const history = useHistory();
+  const navToHome = () => {
+    history.push('/');
+  };
 
   return (
     <header className="header pt-10">
-      <h1 onClick={handleNavToHome}>Happy <span>Cat</span></h1>
+      <h1 onClick={navToHome}>Happy <span>Cat</span></h1>
     </header>
   );
 }

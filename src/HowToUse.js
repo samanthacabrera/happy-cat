@@ -1,13 +1,11 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
-function HowToUse({toggleLogin}) {
-
-
-  const navigate = useNavigate();
-  const handleNavToLogin = () => {
-    navigate('/login');
-  };
+function HowToUse() {
+  const history = useHistory()
+  const navToAddPet = () => {
+    history.push('/addPet')
+  }
     return (
     <div className="max-w-3xl mx-auto px-4 py-8">
       <p className="text-lg text-gray-700 mb-4">
@@ -22,7 +20,7 @@ function HowToUse({toggleLogin}) {
           </li>
           <li className="mb-4">
             <span className="block text-lg font-semibold text-gray-700 mb-2">Explore toolbox:</span>
-            After adding your cat, you can explore various tools provided by HappyCat.com. These tools include a comprehensive dashboard to monitor your cat's health parameters and educational resources on common feline health issues.
+            After adding your cat, you can explore various tools found on your pet's profile. These tools include a comprehensive dashboard to monitor your cat's health parameters and educational resources on common feline health issues.
           </li>
           <li className="mb-4">
             <span className="block text-lg font-semibold text-gray-700 mb-2">Record Health Data:</span>
@@ -34,15 +32,13 @@ function HowToUse({toggleLogin}) {
           </li>
           <li className="mb-4">
             <span className="block text-lg font-semibold text-gray-700 mb-2">Stay Informed:</span>
-            Take advantage of resources and articles provided on HappyCat.com to learn more about common cat health issues, preventive care tips, and best practices for maintaining your cat's well-being. Stay updated with the latest information in feline healthcare to provide the best possible care for your furry friend.
+            Take advantage of resources and articles provided to learn more about common cat health issues, preventive care tips, and best practices for maintaining your cat's well-being. Stay updated with the latest information in feline healthcare to provide the best possible care for your furry friend.
           </li>
         </ol>
       </div>
-      <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        onClick={handleNavToLogin}
-      >
-        Go to Login
+      <button className="bg-blue-300 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          onClick={navToAddPet}>
+          Add Cat
       </button>
       <p className="text-sm text-gray-600 mt-4">
         Disclaimer: HappyCat.com offers tools for cat owners to track various health parameters and common chronic diseases in felines. It does not replace professional veterinary advice or diagnosis. Please consult with a qualified veterinarian for personalized recommendations and treatment plans based on a comprehensive evaluation of your cat's health status.

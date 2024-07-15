@@ -4,19 +4,12 @@
       "id": 1,
       "name": "Ares",
       "age": "3",
+      "gender": "Male",
       "breed": "Birman",
-      "condition": "Chronic Kidney Disease",
-      "vetName": "Dr.Vet",
+      "condition": "Feline Lower Urinary Track Disease",
+      "vetName": "Dr. Vet",
       "vetNumber": "626-233-9887",
-      "logs": [
-        {
-          "date": "2024-03-19",
-          "foodIntake": 4,
-          "waterIntake": 3,
-          "weight": 4,
-          "notes": "decreased appeitite"
-        }
-      ]
+      "icon": "cat_2173378.png"
     },
     {
       "id": 2,
@@ -24,18 +17,51 @@
       "age": "2",
       "gender": "Female",
       "breed": "Tabby",
-      "condition": "Feline Lower Urinary Track Disease",
+      "condition": "Chronic Kidney Disease",
       "vetName": "Dr. Vet",
       "vetNumber": "626-233-9887",
-      "logs": []
+      "icon": "cat_2173367.png"
     },
     {
       "id": 3,
-      "name": "Mochi",
+      "name": "Lyla",
+      "age": "3",
+      "gender": "Female",
+      "breed": "Tabby",
+      "condition": "Chronic Kidney Disease",
+      "vetName": "Dr. Vet",
+      "vetNumber": "626-233-9887",
+      "icon": "IMG_20240322_200916_154.png"
+    },
+    {
+      "id": 4,
+      "name": "Ditto",
+      "age": "1",
+      "gender": "Male",
+      "breed": "Ragdoll",
+      "condition": "Inflammatory Bowel Disease",
+      "vetName": "Dr. Vet",
+      "vetNumber": "626-233-9887",
+      "icon": "cat_2173461.png"
+    },
+    {
+      "id": 5,
+      "name": "Sab",
+      "age": "11",
+      "gender": "Female",
+      "breed": "Persian Blue",
+      "condition": "Diabetes Mellitus",
+      "vetName": "Dr. Vet",
+      "vetNumber": "626-233-9887",
+      "icon": "cat_2173433.png"
+    },
+    {
+      "id": 6,
+      "name": "David",
       "age": "2",
       "gender": "Male",
-      "breed": "Calico",
-      "condition": "Hyperthyroidism",
+      "breed": "Russian Blue",
+      "condition": "Inflammatory Bowel Disease",
       "vetName": "Dr. Vet",
       "vetNumber": "626-233-9887",
       "logs": []

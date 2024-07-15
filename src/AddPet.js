@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-function AddPetForm({ profile, profiles }) {
+function AddPet({ profiles, updateProfiles }) {
+
     const [formData, setFormData] = useState({
         name: '',
         age: '',
@@ -17,7 +18,9 @@ function AddPetForm({ profile, profiles }) {
             ...formData,
             [name]: value
         });
-    };
+    }
+  
+
 
    const handleAddPet = (e) => {
     e.preventDefault();
@@ -37,7 +40,7 @@ function AddPetForm({ profile, profiles }) {
         logs: [] // Empty logs for the new pet
     };
 
-    fetch('http://localhost:3001/profiles', {
+    fetch(`http://localhost:3001/profiles`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -50,7 +53,8 @@ function AddPetForm({ profile, profiles }) {
         }
         return response.json();
     })
-    .then(data => {
+      .then(newPetData => {
+        updateProfiles(newPetData)
         setFormData({
             name: '',
             age: '',
@@ -66,62 +70,9 @@ function AddPetForm({ profile, profiles }) {
         console.error(error);
         alert('Failed to add pet');
     });
-};
-
-
-    // return (
-    //     <form onSubmit={handleAddPet}>
-         
-    //         <label>
-    //             Name:
-    //             <input type="text" name="name" value={formData.name} onChange={handleChange}/>
-    //         </label>
-    //         <br />
-    //         <label>
-    //             Age:
-    //             <input type="text" name="age" value={formData.age} onChange={handleChange}/>
-    //         </label>
-    //         <br />
-    //          <label>
-    //             Gender:
-    //             <input type="text" name="gender" value={formData.gender} onChange={handleChange}/>
-    //         </label>
-    //          <br />
-    //         <label>
-    //             Breed:
-    //             <input type="text" name="breed" value={formData.breed} onChange={handleChange}/>
-    //         </label>
-    //         <br />
-    //         <label>
-    //             Condition:
-    //             <select name="condition" value={formData.condition} onChange={handleChange}>
-    //                 <option value="">Select a condition</option>
-    //                 <option value="Feline Lower Urinary Track Disease">Feline Lower Urinary Track Disease</option>
-    //                 <option value="Chronic Kidney Disease">Chronic Kidney Disease</option>
-    //                 <option value="Hyperthyroidism">Hyperthyroidism</option>
-    //                 <option value="Infalmmatory Bowel Disease">Inflammatory Bowel Disease</option>
-    //                 <option value="Diabetes Mellitus">Diabetes Mellitus</option>
-    //                 <option value="Feline obesity">Feline obesity</option>
-    //             </select>
-    //         </label>
-    //         <br/>
-    //         <label>
-    //             Vet's name:
-    //             <input type="text" name="vetName" value={formData.vetName} onChange={handleChange}/>
-    //         </label>
-    //          <br />
-    //         <label>
-    //             Vet's number:
-    //             <input type="text" name="vetNumber" value={formData.vetNumber} onChange={handleChange}/>
-    //         </label>
-           
-            
-      
-    //         <button type="submit">Add Pet</button>
-    //     </form>
-    // );
+}
     return (
-    <form onSubmit={handleAddPet} className="max-w-md mx-auto p-4 bg-gray-100 rounded-lg">
+    <form onSubmit={handleAddPet} className="max-w-md mx-auto my-10">
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2" htmlFor="name">Name:</label>
         <input
@@ -158,7 +109,6 @@ function AddPetForm({ profile, profiles }) {
           <option value="Hyperthyroidism">Hyperthyroidism</option>
           <option value="Inflammatory Bowel Disease">Inflammatory Bowel Disease</option>
           <option value="Diabetes Mellitus">Diabetes Mellitus</option>
-          <option value="Feline obesity">Feline obesity</option>
         </select>
       </div>
       <div className="mb-4">
@@ -173,21 +123,12 @@ function AddPetForm({ profile, profiles }) {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="text" name="vetNumber" value={formData.vetNumber} onChange={handleChange} />
       </div>
-      {/* <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        type="submit"
-      >
-        Add Pet
-      </button> */}
-    <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        type="submit"
-      >
-       Add Pet
+        <button onClick={handleAddPet} className="bg-blue-300 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Add Cat
       </button>
     </form>
   );
 }
 
-export default AddPetForm;
+export default AddPet;
 
