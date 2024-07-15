@@ -11,12 +11,12 @@ Ensure you have the following installed on your machine:
 - JSON server
 
 1. Clone the repository:
-   git clone https://github.com/samanthacabrera/happy-cat
-   cd happy-cat
+   - $ git clone https://github.com/samanthacabrera/happy-cat
+   - $ cd happy-cat
 
 2. Running React application:
-   npm start
+   - $ npm start
 
 3. Start server:
-   cd src
-   json-server --watch db.json --port 3001
+   - $ cd src
+   - $ json-server --watch db.json --port 3001
